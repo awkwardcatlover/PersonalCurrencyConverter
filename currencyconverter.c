@@ -4,16 +4,16 @@
 void welcomeUser()
 {
 	printf("*******************************************\n");
-	puts("***\tTERMINAL CURRENCY CONVERTER\t***");
-	printf("*******************************************\n\n");
+	puts("***\tOFFLINE TERMINAL CURRENCY CONVERTER\t***");
+	printf("*******************************************\n");
+	printf("THIS TERMINAL CURRENCY CONVERTER USES STATIC APPROXIMATE VALUES TO MAKE CONVERSIONS\n");
 }
 
 int askUser()
 {
 	int answer;
 
-	printf("\n*** PLEASE SELECT THE CURRENCY YOU WANT TO CONVERT ***\n");
-	printf("\n");
+	printf("\n*** PLEASE SELECT THE CURRENCY YOU WANT TO CONVERT ***\n\n");
 	printf("1. CAD To Euro\n2. Euro To CAD\n3. CAD To US\n4. US To CAD\n5. To quit\n\n");
 	printf("*******************************************\n");
 	printf("Your Choice : ");
@@ -26,15 +26,39 @@ int askUser()
 void convertCADToEUR()
 {
 
-	puts("You have chosen to convert CAD to EURO :");
-	puts("Please input the amount of CAD to convert : ");
+	int keepGoing = 0;
+	do
+	{
+		double cad = 0;
+		printf("\n************************************\n");
+		puts("***\tCONVERTING CAD TO EUROS\t***");
+		printf("************************************\n\n");
+		puts("Please input the amount of CAD to convert to euros : ");
+		scanf("%lf", &cad);
+		printf("\n%.2f CAD is approximately %.2f Euros (1 CAD roughly equals 0.61 Euros).\n", cad, cad * 0.61);
+		puts("\nConvert another value? (\"1\" for yes) : ");
+		scanf("%d", &keepGoing);
+
+	} while (keepGoing == 1);
 }
 
 void convertEURToCAD()
 
 {
-	puts("You have chosen to convert EUR to CAD :");
-	puts("Please input the amount of EUR to convert : ");
+	int keepGoing = 0;
+	do
+	{
+		double euros = 0;
+		printf("\n************************************\n");
+		puts("***\tCONVERTING EUROS TO CAD\t***");
+		printf("************************************\n\n");
+		puts("Please input the amount of Euros to convert to CAD : ");
+		scanf("%lf", &euros);
+		printf("\n%.2f Euros is approximately %.2f CAD (1 Euro roughly equals 1.62 CAD).\n", euros, euros * 1.62);
+		puts("\nConvert another value? (\"1\" for yes) : ");
+		scanf("%d", &keepGoing);
+
+	} while (keepGoing == 1);
 }
 
 void convertCADToUS()
@@ -47,9 +71,9 @@ void convertCADToUS()
 		printf("\n************************************\n");
 		puts("***\tCONVERTING CAD TO US\t***");
 		printf("************************************\n\n");
-		puts("Please input the amount of CAD to convert : ");
+		puts("Please input the amount of CAD to convert to US: ");
 		scanf("%lf", &cad);
-		printf("\n%.2f CAD is approximately %.2f US\n", cad, cad * 0.71);
+		printf("\n%.2f CAD is approximately %.2f US (1 CAD roughly equals 0.71 US).\n", cad, cad * 0.71);
 		puts("\nConvert another value? (\"1\" for yes) : ");
 		scanf("%d", &keepGoing);
 
@@ -59,8 +83,20 @@ void convertCADToUS()
 void convertUSToCAD()
 
 {
-	puts("You have chosen to convert US to CAD :");
-	puts("Please input the amount of US to convert : ");
+	int keepGoing = 0;
+	do
+	{
+		double us = 0;
+		printf("\n************************************\n");
+		puts("***\tCONVERTING US TO CAD\t***");
+		printf("************************************\n\n");
+		puts("Please input the amount of US to convert to CAD: ");
+		scanf("%lf", &us);
+		printf("\n%.2f US is approximately %.2f CAD (1 US roughly equals 1.38 CAD).\n", us, us * 1.38);
+		puts("\nConvert another value? (\"1\" for yes) : ");
+		scanf("%d", &keepGoing);
+
+	} while (keepGoing == 1);
 }
 
 int main()
