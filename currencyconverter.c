@@ -43,13 +43,13 @@ void convertCADToUS()
 	int keepGoing = 0;
 	do
 	{
-		float cad = 0;
+		double cad = 0;
 		printf("\n************************************\n");
 		puts("***\tCONVERTING CAD TO US\t***");
 		printf("************************************\n\n");
 		puts("Please input the amount of CAD to convert : ");
-		scanf("%f", &cad);
-		printf("\n%.2f CAD is approximately %.2f US\n", cad, (float)cad * 0.71);
+		scanf("%lf", &cad);
+		printf("\n%.2f CAD is approximately %.2f US\n", cad, cad * 0.71);
 		puts("\nConvert another value? (\"1\" for yes) : ");
 		scanf("%d", &keepGoing);
 
